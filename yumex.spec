@@ -6,11 +6,13 @@ License:	GPL v2
 Group:		Applications/System
 Source0:	http://www.yum-extender.org/dnl/yumex/source/%{name}-%{version}.tar.gz
 # Source0-md5:	d48a858c5dfb307c724a2c2c2bcc4e00
+Source1:	%{name}-gtk.desktop
+Source2:	%{name}-kde.desktop
 Patch0:		%{name}-yum-config.patch
 Patch1:		%{name}-gnomesu.patch
 URL:		http://www.yum-extender.org/
 BuildRequires:	gettext-devel
-Requires:	gnomesu
+Requires:	gksu
 Requires:	yum
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -35,6 +37,8 @@ rm -rf $RPM_BUILD_ROOT
 
 rm $RPM_BUILD_ROOT%{_bindir}/yumex
 ln -s /usr/share/yumex/yumex $RPM_BUILD_ROOT%{_bindir}/yumex
+install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}/yumex.desktop
+install %{SOURCE2} $RPM_BUILD_ROOT%{_desktopdir}/yumex-kde.desktop
 
 %py_postclean
 
@@ -53,7 +57,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/yumex
 %dir %{py_sitescriptdir}/yumgui
 %{py_sitescriptdir}/*/*.py[co]
-%{_desktopdir}/yumex.desktop
+%{_desktopdir}/*.desktop
 %dir %{_datadir}/yumex
 %attr(755,root,root) %{_datadir}/yumex/yumex
 %{_datadir}/yumex/*.py*

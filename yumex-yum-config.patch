@@ -1,0 +1,11 @@
+--- yumex-1.9.6/src/misc.py~	2007-04-17 14:05:13.000000000 +0200
++++ yumex-1.9.6/src/misc.py	2007-05-23 18:45:25.862416123 +0200
+@@ -512,7 +512,7 @@
+                         help="Use Yum cache only, dont update metadata" )
+ 
+         parser.add_option("-c", "", dest="conffile", action="store", 
+-                default='/etc/yum.conf', help="yum config file location",
++                default='/etc/yum/yum.conf', help="yum config file location",
+                 metavar=' [config file]')
+                         
+         parser.add_option( "-O", "--fullobsoletion", 

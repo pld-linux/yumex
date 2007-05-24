@@ -9,7 +9,7 @@ Source0:	http://www.yum-extender.org/dnl/yumex/source/%{name}-%{version}.tar.gz
 Source1:	%{name}-gtk.desktop
 Source2:	%{name}-kde.desktop
 Patch0:		%{name}-yum-config.patch
-Patch1:		%{name}-gnomesu.patch
+Patch1:		%{name}-pl.patch
 URL:		http://www.yum-extender.org/
 BuildRequires:	gettext-devel
 Requires:	gksu

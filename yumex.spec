@@ -10,6 +10,9 @@ Source1:	%{name}-gtk.desktop
 Source2:	%{name}-kde.desktop
 Patch0:		%{name}-yum-config.patch
 Patch1:		%{name}-pl.patch
+Patch2:		%{name}-glade.patch
+Patch3:		%{name}-icons.patch
+Patch4:		%{name}-glade2.patch
 URL:		http://www.yum-extender.org/
 BuildRequires:	gettext-devel
 Requires:	gksu
@@ -24,6 +27,9 @@ YumExtender - a graphical frontend to yum
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
+%patch3 -p1
+%patch4 -p1
 
 %build
 %{__make}

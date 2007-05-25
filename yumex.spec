@@ -1,4 +1,5 @@
 Summary:	YumExtender - a graphical frontend to yum
+Summary(pl.UTF-8):	YumExtender - graficzny interfejs dla yuma
 Name:		yumex
 Version:	1.9.6
 Release:	1
@@ -21,7 +22,10 @@ BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-YumExtender - a graphical frontend to yum
+YumExtender - a graphical frontend to yum.
+
+%description -l pl.UTF-8
+YumExtender - graficzny interfejs dla yuma.
 
 %prep
 %setup -q

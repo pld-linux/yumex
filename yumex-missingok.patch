@@ -1,0 +1,27 @@
+diff -ur yumex-1.9.6/src/yumapi.py yumex-1.9.6-new/src/yumapi.py
+--- yumex-1.9.6/src/yumapi.py	2007-04-17 12:29:48.000000000 +0200
++++ yumex-1.9.6-new/src/yumapi.py	2007-05-26 22:03:11.917241033 +0200
+@@ -29,7 +29,7 @@
+ from callbacks import *
+ from dialogs import questionDialog
+ from urlgrabber.grabber import URLGrabError
+-
++from yum.misc import prco_tuple_to_string
+ 
+ class YumexYumHandler(yum.YumBase,YumexPackages):
+     def __init__(self,recent,settings,progress,mainwin,parser):
+@@ -202,9 +202,13 @@
+                 pkgsize = float( txmbr.po.size )
+                 size = format_number( pkgsize )
+                 alist=[]
++                if txmbr.po.prco.has_key('suggests'):
++                    for sug in txmbr.po.prco['suggests']:
++                        appended = _('suggests %s') % prco_tuple_to_string(sug)
++                        alist.append( appended )
+                 for ( obspo, relationship ) in txmbr.relatedto:
+                     if relationship == 'obsoletes':
+-                        appended = 'replacing  %s.%s %s' % ( obspo.name, 
++                        appended = _('replacing  %s.%s %s') % ( obspo.name, 
+                             obspo.arch, obspo.printVer() )
+                         alist.append( appended )
+                 el = ( n, a, evr, repoid, size, alist )

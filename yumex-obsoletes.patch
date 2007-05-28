@@ -1,0 +1,10 @@
+--- ../BUILD/yumex-1.9.6/src/packages.py~       2007-03-20 13:00:23.000000000 +0100
++++ ../BUILD/yumex-1.9.6/src/packages.py        2007-05-28 11:10:45.761489850 +0200
+@@ -172,6 +172,7 @@
+                     yp.action = 'i'
+                     yield yp
+         elif mask == 'updates':
++            self.up.doObsoletes()
+             obsoletes = self.up.getObsoletesTuples( newest=1 )
+             for ( obsoleting, installed ) in obsoletes:
+                 obsoleting_pkg = self.getPackageObject( obsoleting )

@@ -15,6 +15,7 @@ Patch2:		%{name}-glade.patch
 Patch3:		%{name}-icons.patch
 Patch4:		%{name}-glade2.patch
 Patch5:		%{name}-missingok.patch
+Patch6:		%{name}-obsoletes.patch
 URL:		http://www.yum-extender.org/
 BuildRequires:	gettext-devel
 Requires:	gksu
@@ -36,6 +37,7 @@ YumExtender - graficzny interfejs dla yuma.
 %patch3 -p1
 %patch4 -p1
 %patch5 -p1
+%patch6 -p1
 
 %build
 %{__make}

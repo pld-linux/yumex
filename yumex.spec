@@ -19,6 +19,7 @@ Patch6:		%{name}-obsoletes.patch
 URL:		http://www.yum-extender.org/
 BuildRequires:	gettext-devel
 Requires:	gksu
+Requires:	python-pygtk-glade
 Requires:	yum
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)

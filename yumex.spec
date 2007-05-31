@@ -50,10 +50,11 @@ rm -rf $RPM_BUILD_ROOT
 	PYLIBDIR=%{py_sitescriptdir}/..
 
 rm $RPM_BUILD_ROOT%{_bindir}/yumex
-ln -s /usr/share/yumex/yumex $RPM_BUILD_ROOT%{_bindir}/yumex
+ln -s %{_datadir}/yumex/yumex $RPM_BUILD_ROOT%{_bindir}/yumex
 install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}/yumex.desktop
 install %{SOURCE2} $RPM_BUILD_ROOT%{_desktopdir}/yumex-kde.desktop
 
+rm -f $RPM_BUILD_ROOT%{_datadir}/yumex/COPYING
 %py_postclean
 
 %find_lang %{name}
@@ -66,8 +67,8 @@ rm -rf $RPM_BUILD_ROOT
 %doc COPYING ChangeLog
 %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/yumex.conf
 %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/yumex.profiles.conf
-%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/pam.d/yumex
-%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/security/console.apps/yumex
+%config(noreplace) %verify(not md5 mtime size) /etc/pam.d/yumex
+%config(noreplace) %verify(not md5 mtime size) /etc/security/console.apps/yumex
 %attr(755,root,root) %{_bindir}/yumex
 %dir %{py_sitescriptdir}/yumgui
 %{py_sitescriptdir}/*/*.py[co]

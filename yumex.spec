@@ -10,12 +10,8 @@ Source0:	http://www.yum-extender.org/dnl/yumex/source/%{name}-%{version}.tar.gz
 Source1:	%{name}-gtk.desktop
 Source2:	%{name}-kde.desktop
 Patch0:		%{name}-yum-config.patch
-#Patch1:		%{name}-pl.patch
-#Patch2:		%{name}-glade.patch
-#Patch3:		%{name}-icons.patch
-#Patch4:		%{name}-glade2.patch
-Patch5:		%{name}-missingok.patch
-Patch6:		%{name}-obsoletes.patch
+Patch1:		%{name}-missingok.patch
+Patch2:		%{name}-obsoletes.patch
 URL:		http://www.yum-extender.org/
 BuildRequires:	gettext-devel
 Requires:	gksu
@@ -33,12 +29,8 @@ YumExtender - graficzny interfejs dla yuma.
 %prep
 %setup -q
 %patch0 -p1
-#%%patch1 -p1
-#%%patch2 -p1
-#%%patch3 -p1
-#%%patch4 -p1
-%patch5 -p1
-%patch6 -p1
+%patch1 -p1
+%patch2 -p1
 
 %build
 %{__make}

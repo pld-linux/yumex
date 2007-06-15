@@ -1,19 +1,19 @@
 Summary:	YumExtender - a graphical frontend to yum
 Summary(pl.UTF-8):	YumExtender - graficzny interfejs dla yuma
 Name:		yumex
-Version:	1.9.6
+Version:	1.9.9
 Release:	1
 License:	GPL v2
 Group:		Applications/System
 Source0:	http://www.yum-extender.org/dnl/yumex/source/%{name}-%{version}.tar.gz
-# Source0-md5:	d48a858c5dfb307c724a2c2c2bcc4e00
+# Source0-md5:	9c3b785819940eaf25e449a8c466478b
 Source1:	%{name}-gtk.desktop
 Source2:	%{name}-kde.desktop
 Patch0:		%{name}-yum-config.patch
-Patch1:		%{name}-pl.patch
-Patch2:		%{name}-glade.patch
-Patch3:		%{name}-icons.patch
-Patch4:		%{name}-glade2.patch
+#Patch1:		%{name}-pl.patch
+#Patch2:		%{name}-glade.patch
+#Patch3:		%{name}-icons.patch
+#Patch4:		%{name}-glade2.patch
 Patch5:		%{name}-missingok.patch
 Patch6:		%{name}-obsoletes.patch
 URL:		http://www.yum-extender.org/
@@ -33,10 +33,10 @@ YumExtender - graficzny interfejs dla yuma.
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1
-%patch2 -p1
-%patch3 -p1
-%patch4 -p1
+#%%patch1 -p1
+#%%patch2 -p1
+#%%patch3 -p1
+#%%patch4 -p1
 %patch5 -p1
 %patch6 -p1
 

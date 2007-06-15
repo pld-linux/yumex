@@ -8,18 +8,3 @@
              obsoletes = self.up.getObsoletesTuples( newest=1 )
              for ( obsoleting, installed ) in obsoletes:
                  obsoleting_pkg = self.getPackageObject( obsoleting )
---- yumex-1.9.6/src/yumapi.py~	2007-05-30 11:17:44.000000000 +0200
-+++ yumex-1.9.6/src/yumapi.py	2007-05-30 11:26:21.570229473 +0200
-@@ -165,7 +165,7 @@
-                 tx = self.update()
-             else:
-                 self.yumex_logger.info( _( "--> Preparing for a partial update" ) )
--                #if self.settings.fullobsoletion:
--                self.yumex_logger.info( _( "--> Adding all obsoletion to transaction" ) )
--                self._doFullObsoletion()
-+                if self.settings.fullobsoletion:
-+                    self.yumex_logger.info( _( "--> Adding all obsoletion to transaction" ) )
-+                    self._doFullObsoletion()
-                 for po in pkgs['u']:
-                    tx = self.update( po.pkg )
-                    print tx

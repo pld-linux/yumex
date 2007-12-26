@@ -1,12 +1,12 @@
 Summary:	YumExtender - a graphical frontend to yum
 Summary(pl.UTF-8):	YumExtender - graficzny interfejs dla yuma
 Name:		yumex
-Version:	1.9.9
+Version:	2.0.2
 Release:	1
 License:	GPL v2
 Group:		Applications/System
 Source0:	http://www.yum-extender.org/dnl/yumex/source/%{name}-%{version}.tar.gz
-# Source0-md5:	9c3b785819940eaf25e449a8c466478b
+# Source0-md5:	9816813e93495af22aa13a4df0c44ee2
 Source1:	%{name}-gtk.desktop
 Source2:	%{name}-kde.desktop
 Patch0:		%{name}-yum-config.patch
@@ -34,6 +34,14 @@ YumExtender - graficzny interfejs dla yuma.
 %patch1 -p1
 %patch2 -p1
 
+cat << 'EOF' > misc/yumex
+#!/bin/sh
+#
+# Run yumex main python program.
+#
+exec %{__python} %{_datadir}/yumex/yumex.pyc ${1:+"$@"}
+EOF
+
 %build
 %{__make}
 
@@ -44,8 +52,7 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT \
 	PYLIBDIR=%{py_sitescriptdir}/..
 
-rm $RPM_BUILD_ROOT%{_bindir}/yumex
-ln -s %{_datadir}/yumex/yumex $RPM_BUILD_ROOT%{_bindir}/yumex
+mv -f $RPM_BUILD_ROOT{%{_datadir}/yumex,%{_bindir}}/yumex
 install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}/yumex.desktop
 install %{SOURCE2} $RPM_BUILD_ROOT%{_desktopdir}/yumex-kde.desktop
 
@@ -69,7 +76,6 @@ rm -rf $RPM_BUILD_ROOT
 %{py_sitescriptdir}/*/*.py[co]
 %{_desktopdir}/*.desktop
 %dir %{_datadir}/yumex
-%attr(755,root,root) %{_datadir}/yumex/yumex
 %{_datadir}/yumex/*.py[co]
 %{_datadir}/yumex/*.glade
 %{_pixmapsdir}/yumex

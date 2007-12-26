@@ -14,9 +14,9 @@ Patch1:		%{name}-missingok.patch
 Patch2:		%{name}-obsoletes.patch
 URL:		http://www.yum-extender.org/
 BuildRequires:	gettext-devel
-Requires:	gksu
 Requires:	python-pygtk-glade
 Requires:	yum
+Suggests:	gksu
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 

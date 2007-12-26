@@ -9,5 +9,4 @@ Exec=/usr/bin/gksu -u root /usr/bin/yumex
 NotShowIn=KDE
 Type=Application
 Terminal=false
-Encoding=UTF-8
 X-Desktop-File-Install-Version=0.10

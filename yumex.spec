@@ -14,6 +14,8 @@ Patch1:		%{name}-missingok.patch
 Patch2:		%{name}-obsoletes.patch
 URL:		http://www.yum-extender.org/
 BuildRequires:	gettext-devel
+BuildRequires:	intltool
+BuildRequires:	rpmbuild(macros) >= 1.234
 Requires:	python-pygtk-glade
 Requires:	yum
 Suggests:	gksu
@@ -48,7 +50,7 @@ install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}/yumex.desktop
 install %{SOURCE2} $RPM_BUILD_ROOT%{_desktopdir}/yumex-kde.desktop
 
 rm -f $RPM_BUILD_ROOT%{_datadir}/yumex/COPYING
-%py_postclean
+%py_postclean %{_datadir}/yumex
 
 %find_lang %{name}
 
@@ -68,6 +70,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_desktopdir}/*.desktop
 %dir %{_datadir}/yumex
 %attr(755,root,root) %{_datadir}/yumex/yumex
-%{_datadir}/yumex/*.py*
+%{_datadir}/yumex/*.py[co]
 %{_datadir}/yumex/*.glade
 %{_pixmapsdir}/yumex

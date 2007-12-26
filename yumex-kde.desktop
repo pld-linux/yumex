@@ -2,12 +2,14 @@
 Name=Yum Extender
 Name[zh_TW]=Yum 延伸程式
 Comment=GUI front end for Yum
+Comment[pl]=Graficzny interfejs do Yuma
 Comment[zh_TW]=Yum 的圖形使用者介面前端程式
-Categories=Application;System;X-Red-Hat-Base;X-Fedora;
+Categories=System;
 Icon=/usr/share/pixmaps/yumex/yumex-icon.png
 Exec=/usr/bin/yumex
 X-KDE-SubstituteUID=true
-OnlyShowIn=KDE
+OnlyShowIn=KDE;
 Type=Application
 Terminal=false
 X-Desktop-File-Install-Version=0.10
+# vi:encoding=utf-8

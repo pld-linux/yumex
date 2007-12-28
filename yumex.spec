@@ -1,12 +1,12 @@
 Summary:	YumExtender - a graphical frontend to yum
 Summary(pl.UTF-8):	YumExtender - graficzny interfejs dla yuma
 Name:		yumex
-Version:	2.0.2
+Version:	2.0.3
 Release:	1
 License:	GPL v2
 Group:		Applications/System
 Source0:	http://www.yum-extender.org/dnl/yumex/source/%{name}-%{version}.tar.gz
-# Source0-md5:	9816813e93495af22aa13a4df0c44ee2
+# Source0-md5:	738e51e0caf58beda71863a2e3145344
 Source1:	%{name}-gtk.desktop
 Source2:	%{name}-kde.desktop
 Patch0:		%{name}-yum-config.patch

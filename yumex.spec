@@ -15,6 +15,9 @@ Patch2:		%{name}-obsoletes.patch
 URL:		http://www.yum-extender.org/
 BuildRequires:	gettext-devel
 BuildRequires:	intltool
+BuildRequires:	python
+BuildRequires:	python-modules
+BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.234
 Requires:	python-pygtk-glade
 Requires:	yum

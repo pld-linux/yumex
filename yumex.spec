@@ -13,7 +13,7 @@ Patch0:		%{name}-yum-config.patch
 Patch1:		%{name}-missingok.patch
 Patch2:		%{name}-obsoletes.patch
 URL:		http://www.yum-extender.org/
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	intltool
 BuildRequires:	python
 BuildRequires:	python-modules
